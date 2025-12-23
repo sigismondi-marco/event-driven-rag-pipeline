@@ -42,11 +42,20 @@ curl -X POST http://localhost:8080/events \
 * **Payload:** `PositionEvent` JSON object.
 * **Behavior:** Persists data to the `position_events` table.
 
-## 5. Verify Data
+### 5. Verify Data
 
-### Check PostgreSQL Records
+### Check Risk Zones (Reference Data)
 
-To verify that the events have been correctly saved in the database:
+To verify that the weather risk zones are correctly configured in the database:
+
+```bash
+podman exec -it postgres psql -U quarkus -d events -c "SELECT zone_name, hazard_type, severity_level FROM risk_zones;"
+
+```
+
+### Check PostgreSQL Records (Live Events)
+
+To verify that the position events have been correctly saved:
 
 ```bash
 podman exec -it postgres psql -U quarkus -d events -c "SELECT * FROM position_events;"
@@ -55,12 +64,11 @@ podman exec -it postgres psql -U quarkus -d events -c "SELECT * FROM position_ev
 
 ### Check Kafka Messages (Redpanda)
 
-Monitor the CDC events being streamed to the Kafka topic:
+Monitor the CDC events being streamed to the Kafka topics:
 
-```bash
-podman exec -it redpanda rpk topic consume cdc.public.position_events --from-start
+* **Events Topic:** `podman exec -it redpanda rpk topic consume cdc.public.position_events --from-start`
+* **Risk Zones Topic:** `podman exec -it redpanda rpk topic consume cdc.public.risk_zones --from-start`
 
-```
 
 ## 6. Monitoring & Troubleshooting
 
