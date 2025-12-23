@@ -9,39 +9,27 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 public class PositionEventEntity extends PanacheEntityBase {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id; 
+
     @Column(name = "event_id")
     public String eventId;
 
+    @Column(name = "schema_version")
     public String schemaVersion;
+    
     public Instant timestamp;
+
+    @Column(name = "device_id")
     public String deviceId;
+
+    @Column(name = "device_type")
     public String deviceType;
+
 
     @Embedded
     public Location location;
 
     @Embedded
     public Payload payload;
-}
-
-@Embeddable
-class Location {
-    public String type;
-    public Double longitude;
-    public Double latitude;
-    public Double altitude;
-}
-
-@Embeddable
-class Payload {
-    public Double accX;
-    public Double accY;
-    public Double accZ;
-    public String accUnit;
-    
-    public Integer engineRpm;
-    public Double speedKmh;
-    public Integer fuelLevelPercent;
-    
-    public String status;
 }

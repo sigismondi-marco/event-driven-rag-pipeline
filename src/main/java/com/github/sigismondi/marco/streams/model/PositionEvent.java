@@ -1,7 +1,6 @@
 package com.github.sigismondi.marco.streams.model;
 
 import java.time.Instant;
-import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,7 +19,8 @@ public record PositionEvent(
 
     public record Location(
         @JsonProperty("type") String type,
-        @JsonProperty("coordinates") List<Double> coordinates,
+        @JsonProperty("lon") Double longitude,
+        @JsonProperty("lat") Double latitude,
         @JsonProperty("altitude") Double altitude
     ) {}
 

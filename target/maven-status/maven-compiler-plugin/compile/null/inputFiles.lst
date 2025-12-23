@@ -1,0 +1,8 @@
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/api/DebugResource.java
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/api/PositionResource.java
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/domain/model/Location.java
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/domain/model/Payload.java
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/domain/model/PositionEventEntity.java
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/streams/KafkaConsumer.java
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/streams/RAGTopology.java
+/home/marcosigismondi/Documents/Projects/RAG with KStream/code/event-driven-rag-pipeline/src/main/java/com/github/sigismondi/marco/streams/model/PositionEvent.java
