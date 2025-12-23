@@ -1,0 +1,18 @@
+{
+  "name": "posizioni-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "plugin.name": "pgoutput",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "quarkus",
+    "database.password": "quarkus",
+    "database.dbname": "events",
+    "topic.prefix": "cdc",
+    "table.include.list": "public.position_events",
+    "snapshot.mode": "initial",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.unwrap.drop.tombstones": "true"
+  }
+}
