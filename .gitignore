@@ -1,0 +1,26 @@
+### --- Quarkus & Java ---
+target/
+.quarkus/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+.factorypath
+
+### --- Maven ---
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### --- IDEs (IntelliJ, VS Code, Eclipse) ---
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+*.code-workspace
+.history/
+
